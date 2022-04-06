@@ -28,7 +28,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x += speed
 	
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("roll"):
 		velocity *= dashMultiplier
 		
 	#moving
