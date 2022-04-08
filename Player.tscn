@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://shopkeeper.png" type="Texture" id=2]
-[ext_resource path="res://arrow.png" type="Texture" id=3]
+[ext_resource path="res://Textures/shopkeeper.png" type="Texture" id=2]
+[ext_resource path="res://Textures/arrow.png" type="Texture" id=3]
+[ext_resource path="res://Sword.gd" type="Script" id=4]
+[ext_resource path="res://Textures/sword.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31, 31.5 )
@@ -22,3 +24,11 @@ shape = SubResource( 1 )
 [node name="Gfx" type="Sprite" parent="Pointer"]
 position = Vector2( 0, -51 )
 texture = ExtResource( 3 )
+
+[node name="Sword" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+
+[node name="Gfx" type="Sprite" parent="Sword"]
+position = Vector2( 26, -11 )
+texture = ExtResource( 5 )

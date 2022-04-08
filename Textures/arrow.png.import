@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shopkeeper.png-fc52b0fb5b31b7c7aeac104fdb81230b.stex"
+path="res://.import/arrow.png-598b90186a62e5cc0acbe9b431d3a4c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shopkeeper.png"
-dest_files=[ "res://.import/shopkeeper.png-fc52b0fb5b31b7c7aeac104fdb81230b.stex" ]
+source_file="res://Textures/arrow.png"
+dest_files=[ "res://.import/arrow.png-598b90186a62e5cc0acbe9b431d3a4c0.stex" ]
 
 [params]
 

@@ -1,19 +1,19 @@
 extends KinematicBody2D
 
-
 #player movement vars
 var speed : int  = 300
 var velocity : Vector2  = Vector2(0, 0)
 var dashMultiplier : int = 10
 
+#WEAPONS
 #store mouse position and create pointer object
 var mousePos : Vector2 = Vector2(0, 0)
 onready var pointer = get_node("Pointer")
+onready var sword = get_node("Sword")
+var current_weapon : String = "gun"
 
-
-#store bullet
+#bullet
 onready var Bullet = preload("res://Bullet.tscn")
-
 
 func _physics_process(delta):
 	#reset
@@ -38,10 +38,15 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 	#hide the pointer
-	if Input.is_action_just_pressed("hide"):
-		if pointer.visible:
+	if Input.is_action_just_pressed("switch"):
+		if current_weapon == "gun":
+			current_weapon = "sword"
 			pointer.visible = false
+			sword.visible = true
+			
 		else:
+			current_weapon = "gun"
+			sword.visible = false
 			pointer.visible = true
 
 	#right direction of pointer
@@ -50,13 +55,17 @@ func _physics_process(delta):
 		
 	#shoot
 	if Input.is_action_just_pressed("attack"):
-		#create instance of new bullet
-		var bullet = Bullet.instance()
-		#add it as child to owner
-		owner.add_child(bullet)
-		#set position of bullet to player position
-		bullet.position = position
-		bullet.set_rotation_degrees( pointer.get_rotation_degrees() - 90)
+		if current_weapon == "gun":
+			#create instance of new bullet
+			var bullet = Bullet.instance()
+			#add it as child to owner
+			owner.add_child(bullet)
+			#set position of bullet to player position
+			bullet.position = position
+			bullet.set_rotation_degrees( pointer.get_rotation_degrees() - 90)
+		
+		if current_weapon == "sword":
+			sword._swing()
 			
 
 
