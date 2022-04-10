@@ -1,8 +1,6 @@
-# The J Team Presents...
+The J Team Presents...
 
-title is work in progress
-
-# Our Game
+# Our Game (title is work in progress)
 
 Soulslike Rouglike Dungeon Crawler in which your mission is to save Stuyvesant from a seige of monsters... 
 but who really is behind the operation?
