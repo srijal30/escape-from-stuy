@@ -7,3 +7,4 @@ func take_damage():
 	$gfx.texture = load("res://Textures/Temp/hurt_dummy.png")
 	yield( get_tree().create_timer(.1), "timeout")
 	$gfx.texture = load("res://Textures/Temp/dummy.png")
+
