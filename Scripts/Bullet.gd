@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var speed :int = 700
+var speed :int = 2500
 var trajectory : Vector2 = Vector2(0, 0)
 
 	

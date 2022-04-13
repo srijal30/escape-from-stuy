@@ -8,10 +8,10 @@ func _swing():
 	
 func _physics_process(delta):
 	
-	if swinging and rotation_degrees < 90:
-		rotation_degrees += 10
-		print( "swinging ")
+	#using interpolation
+	if swinging and rotation_degrees < 180:
+		rotation_degrees += 20
 			
-	if rotation_degrees >= 90:
+	if rotation_degrees >= 180:
 		rotation_degrees = 0
 		swinging = false

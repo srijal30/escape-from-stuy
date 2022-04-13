@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shopkeeper.png-8490cca3e599534787d20d6da0d9da76.stex"
+path="res://.import/Bullet.png-fc0db080b0d227f8231b6e9ee6719f98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/shopkeeper.png"
-dest_files=[ "res://.import/shopkeeper.png-8490cca3e599534787d20d6da0d9da76.stex" ]
+source_file="res://Textures/Temp/Bullet.png"
+dest_files=[ "res://.import/Bullet.png-fc0db080b0d227f8231b6e9ee6719f98.stex" ]
 
 [params]
 
