@@ -9,8 +9,8 @@ func shoot():
 	var bullet = Bullet.instance()
 	#add it as child to mainScene
 	owner.owner.add_child(bullet)
-	#set position of bullet to player position
-	bullet.position = owner.position
+	#set position of bullet to gfx position
+	bullet.position = $Gfx.global_position
 	bullet.set_rotation_degrees( rotation_degrees - 90 )	
 
 #for process update
