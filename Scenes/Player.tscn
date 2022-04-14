@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Textures/Temp/shopkeeper.png" type="Texture" id=2]
+[ext_resource path="res://Textures/Temp/bozoman.png" type="Texture" id=2]
 [ext_resource path="res://Textures/Temp/arrow.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Sword.gd" type="Script" id=4]
 [ext_resource path="res://Textures/Temp/sword.png" type="Texture" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/Gun.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
+height = 21.1801
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -20,8 +21,8 @@ scale = Vector2( 0.981094, 0.988803 )
 texture = ExtResource( 2 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
-scale = Vector2( 1.3159, 1.39677 )
+position = Vector2( -2, 2 )
+scale = Vector2( 2.56942, 2.67119 )
 shape = SubResource( 1 )
 
 [node name="Gun" type="Node2D" parent="."]
@@ -34,7 +35,8 @@ texture = ExtResource( 3 )
 
 [node name="Sword" type="Area2D" parent="."]
 visible = false
-position = Vector2( 21, -2 )
+position = Vector2( 45, -9 )
+scale = Vector2( -1.61944, 1.79294 )
 script = ExtResource( 4 )
 
 [node name="Gfx" type="Sprite" parent="Sword"]

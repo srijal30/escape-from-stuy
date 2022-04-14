@@ -50,6 +50,9 @@ func _physics_process(delta):
 		velocity.x += 1
 	
 	velocity = velocity.normalized() * speed
-		
+	
+	if Input.is_action_just_pressed("roll"):
+		velocity *= dashMultiplier
+	
 	#moving
 	move_and_slide(velocity)
