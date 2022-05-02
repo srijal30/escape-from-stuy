@@ -1,54 +1,43 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player/Movement.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Temp/bozoman.png" type="Texture" id=2]
-[ext_resource path="res://Textures/Temp/arrow.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Sword.gd" type="Script" id=4]
-[ext_resource path="res://Textures/Temp/sword.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/Camera.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/Gun.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Player/InteractArea.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Player/Manager.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Player/Camera.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 21.1801
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 1.00613, 1 )
 script = ExtResource( 1 )
 
 [node name="Gfx" type="Sprite" parent="."]
-scale = Vector2( 0.981094, 0.988803 )
+scale = Vector2( 0.981094, 0.9977 )
 texture = ExtResource( 2 )
 
-[node name="Collider" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 2 )
 scale = Vector2( 2.56942, 2.67119 )
 shape = SubResource( 1 )
 
-[node name="Gun" type="Node2D" parent="."]
-rotation = 1.5708
-script = ExtResource( 7 )
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource( 6 )
 
-[node name="Gfx" type="Sprite" parent="Gun"]
-position = Vector2( 0, -75 )
-texture = ExtResource( 3 )
+[node name="Manager" type="Node2D" parent="."]
+script = ExtResource( 5 )
 
-[node name="Sword" type="Area2D" parent="."]
-visible = false
-position = Vector2( 45, -9 )
-scale = Vector2( -1.61944, 1.79294 )
+[node name="InteractArea" type="Area2D" parent="Manager"]
+scale = Vector2( 0.785061, 0.794141 )
 script = ExtResource( 4 )
 
-[node name="Gfx" type="Sprite" parent="Sword"]
-position = Vector2( 1, 0 )
-texture = ExtResource( 5 )
-offset = Vector2( 0, -15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-position = Vector2( 1, -10 )
-scale = Vector2( 0.376476, 0.792607 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager/InteractArea"]
+modulate = Color( 0.247059, 0.027451, 0.227451, 1 )
+scale = Vector2( 7.51942, 7.67208 )
 shape = SubResource( 2 )
 
-[node name="Camera" type="Camera2D" parent="."]
-visible = false
-script = ExtResource( 6 )
+[connection signal="area_entered" from="Manager/InteractArea" to="Manager/InteractArea" method="_on_InteractArea_area_entered"]
+[connection signal="area_exited" from="Manager/InteractArea" to="Manager/InteractArea" method="_on_InteractArea_area_exited"]
