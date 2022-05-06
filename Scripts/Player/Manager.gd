@@ -13,6 +13,12 @@ var current : int = 0
 #passive setup
 var passives = []
 
+func add_passive( passive ):
+	pass
+
+func remove_passive( passive ):
+	pass
+
 func _process(delta):
 	#switching weapon
 	if Input.is_action_just_pressed("switch"):

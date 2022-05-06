@@ -8,10 +8,9 @@ var currentItem #will store the item area
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		#first check if there even is an item to interat with
+		#first check if there even is an item to interact with
 		if currentItem != null:
 			#then find out what type
-			
 			if currentItem.is_in_group("weapon"):
 				get_parent().weapons.append( currentItem.itemSrc )
 				print("got weapon")

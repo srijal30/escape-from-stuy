@@ -18,8 +18,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
 [node name="sword" parent="." instance=ExtResource( 3 )]
 position = Vector2( -148, -198 )
 itemSrc = ExtResource( 4 )
@@ -31,3 +29,5 @@ position = Vector2( 50, -152 )
 itemSrc = ExtResource( 7 )
 texture = ExtResource( 6 )
 group = "weapon"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
