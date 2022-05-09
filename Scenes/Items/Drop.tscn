@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/Temp/item.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Item.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Drop.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,10 +22,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -2 ), Vector2( 0, 2 ), Vector2( 0, -2 ) ]
 }
 
-[node name="Item" type="Node2D" groups=["pickup"]]
+[node name="Item" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="InteractionZone" type="Area2D" parent="." groups=["interact"]]
+[node name="InteractionZone" type="Area2D" parent="." groups=["pickupable"]]
 scale = Vector2( 1.40192, 1.64081 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]

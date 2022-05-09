@@ -5,7 +5,6 @@ var despawnSpeed : float = 2.5 #in seconds
 
 #on the creation
 func _ready():
-	print( get_parent() )
 	#prepare to destroy after specified tiem
 	$Timer.connect("timeout", self, "queue_free")
 	$Timer.set_wait_time(despawnSpeed)

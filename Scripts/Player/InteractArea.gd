@@ -1,43 +1,42 @@
 extends Area2D
 
-#INTerACtion Manager
-#curretnly only works with items (weapons and passives)
+#Interaction Manager (job is to pickup weapons and passives)
 
+#currently only works with items (weapons and passives)
 #in the future maybe for chests, doors, etc
-var currentItem #will store the item area
 
-func _process(delta):
+func add_weapon( weapon ):
+	get_parent().weapons.append( weapon )
+	
+func add_passive( passive ):
+	print("passives not implemented yet")
+
+#precondition, valid pickupable
+func pickup( current ):
+	#if a weapon
+	if current.is_in_group("weapon"):
+		add_weapon( current.item_name )
+		current.queue_free()
+	#if a passive
+	elif current.is_in_group("passive"):
+		add_passive( current.item_name )
+		current.queue_free()
+	#something else
+	else:
+		print( current )
+		print( current.item_name )
+		print( current.is_in_group("weapon") )
+		print("something went wrong in item pickup")
+
+func _physics_process(delta):
+	#when we pick up, we add the item string name
 	if Input.is_action_just_pressed("interact"):
-		#first check if there even is an item to interact with
-		if currentItem != null:
-			#then find out what type
-			if currentItem.is_in_group("weapon"):
-				get_parent().weapons.append( currentItem.itemSrc )
-				print("got weapon")
-				print( get_parent().weapons )
-				currentItem.queue_free()
-				
-			if currentItem.is_in_group("passive"):
-				get_parent().passives.append( currentItem.itemSrc )
-				print("got passive")
-				print( get_parent().passives )
-				currentItem.queue_free()
-
-func _on_InteractArea_area_entered(area):
-	#check if you can pick it up
-	if area.owner == null:
-		return
-	if area.owner.is_in_group("pickup"):
-		currentItem = area.owner #cuz we want the object not area
-	print("you can pick up")
-	print(currentItem)
-	print()
-
-
-#i think this is scuffed
-func _on_InteractArea_area_exited(area):
-	if area == currentItem:
-		currentItem = null
-	print("you cant pick up")
-	print(currentItem)
-	print()
+		var areas = get_overlapping_areas()
+		if areas != []: #check if we are overlapping w/ areas
+			if areas[0].is_in_group("pickupable"): #check if we are overlapping w/ pickup
+				pickup( areas[0].get_parent() )
+			else:
+				print("no items to pickup!")
+		else:
+			print("no items to pickup!")
+			

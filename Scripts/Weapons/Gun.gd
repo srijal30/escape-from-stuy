@@ -9,7 +9,7 @@ func attack():
 	#create instance of new bullet
 	var bullet = Bullet.instance()
 	#add it as child to mainScene
-	get_parent().get_parent().add_child(bullet)
+	get_tree().get_current_scene().add_child(bullet)
 	#set position of bullet to gfx position
 	bullet.global_position = $Gfx.global_position
 	bullet.set_rotation_degrees( rotation_degrees - 90 )	

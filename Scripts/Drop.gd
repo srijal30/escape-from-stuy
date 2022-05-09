@@ -3,15 +3,16 @@ extends Node2D
 #bascially a wrapper for item on the floor
 
 #should link to actual item scene
-export (Resource) var itemSrc = null
-export (Texture) var texture
-export (String) var group
+export (String) var item_name
 
 #start float animation
 func _ready():
-	#change the texture
-	$Sprite.texture = texture
-	#add to group
-	add_to_group(group)
+	
+	#if we set item name
+	if item_name:
+		var info = ItemManager.get_item(item_name)
+		$Sprite.texture = info.texture
+		add_to_group(info.type)
+	
 	#start the animation
 	$AnimationPlayer.play("Float")

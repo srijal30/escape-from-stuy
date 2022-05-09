@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/Temp/map.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Items/Item.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Textures/Items/smolKatana.png" type="Texture" id=4]
-[ext_resource path="res://Textures/Items/smolGuitar.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Items/Drop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/Dummy.tscn" type="PackedScene" id=4]
 
 [node name="MainScene" type="Node2D"]
 
@@ -19,11 +18,26 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Item" parent="." instance=ExtResource( 3 )]
-position = Vector2( 358, -120 )
-texture = ExtResource( 5 )
-group = "weapon"
+position = Vector2( 199, 48 )
+item_name = "test_sword"
 
 [node name="Item2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 359, 135 )
-texture = ExtResource( 4 )
-group = "weapon"
+position = Vector2( 72, 162 )
+scale = Vector2( 1.00613, 1 )
+item_name = "test_gun"
+
+[node name="Item3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 73, -144 )
+scale = Vector2( 1.00613, 1 )
+item_name = "test_gun"
+
+[node name="Item4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -201, 144 )
+scale = Vector2( 1.00613, 1 )
+item_name = "test_sword"
+
+[node name="Dummy" parent="." instance=ExtResource( 4 )]
+position = Vector2( -337, -113 )
+
+[node name="Dummy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 538, 162 )

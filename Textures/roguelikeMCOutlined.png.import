@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/roguelikeMCOutlined.png-ba137132c968ac1077d7a5faeb489564.stex"
+path="res://.import/roguelikeMCOutlined.png-7bd0d5d85f4f01a6fa4176ae1115b1e9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Characters/roguelikeMCOutlined.png"
-dest_files=[ "res://.import/roguelikeMCOutlined.png-ba137132c968ac1077d7a5faeb489564.stex" ]
+source_file="res://Textures/roguelikeMCOutlined.png"
+dest_files=[ "res://.import/roguelikeMCOutlined.png-7bd0d5d85f4f01a6fa4176ae1115b1e9.stex" ]
 
 [params]
 
