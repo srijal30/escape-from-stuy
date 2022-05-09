@@ -33,6 +33,7 @@ func _on_InteractArea_area_entered(area):
 	print(currentItem)
 	print()
 
+
 #i think this is scuffed
 func _on_InteractArea_area_exited(area):
 	if area == currentItem:

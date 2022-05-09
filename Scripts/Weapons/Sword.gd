@@ -1,11 +1,7 @@
 extends Area2D
 
-
 var swinging = false
 
-
-func _ready():
-	print("gun created")
 
 #to swing the sword
 func attack():

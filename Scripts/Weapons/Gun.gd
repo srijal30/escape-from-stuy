@@ -3,8 +3,6 @@ extends Node2D
 #bullet
 onready var Bullet = load("res://Scenes/Items/TestGun/Bullet.tscn")
 
-func _ready():
-	print("gun created")
 
 #for shooting
 func attack():
