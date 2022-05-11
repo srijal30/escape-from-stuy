@@ -11,8 +11,8 @@ var activeWeapon = null #storage of activated weapon scene instance
 var current : int = 0
 
 #passive setup
+#NOT IMPLEMENTED YET
 var passives = []
-
 
 func add_passive( passive ):
 	pass
@@ -55,5 +55,3 @@ func _process(delta):
 		else:
 			print("you have no weapon selected!")
 	
-	#TO DO
-	#other attacks

@@ -37,7 +37,7 @@ scale = Vector2( 1.00613, 1 )
 item_name = "guitar"
 
 [node name="Dummy" parent="." instance=ExtResource( 4 )]
-position = Vector2( -337, -113 )
+position = Vector2( -295, -99 )
 
 [node name="Dummy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 195, 188 )

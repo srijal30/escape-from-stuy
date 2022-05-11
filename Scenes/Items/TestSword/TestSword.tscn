@@ -2,6 +2,7 @@
 
 [ext_resource path="res://Scripts/Weapons/Sword.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Items/sword.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Animations/swing.tres" type="Animation" id=3]
 
 [sub_resource type="CapsuleShape2D" id=2]
 height = 15.6956
@@ -19,21 +20,6 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "swing"
-length = 0.7
-step = 0.01
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.125735, 7.54976, 86.8322, -0.25, 0, 0.25, 0, 0, -0.118605, 3.49884, 0.25, 0 ),
-"times": PoolRealArray( 0.00124492, 0.347271, 0.607965 )
-}
-
 [node name="Sword" type="Area2D"]
 position = Vector2( 0, -2 )
 script = ExtResource( 1 )
@@ -49,6 +35,8 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
-anims/swing = SubResource( 4 )
+anims/swing = ExtResource( 3 )
 next/swing = "RESET"
 blend_times = [ "swing", "RESET", 0.004 ]
+
+[connection signal="area_entered" from="." to="." method="_on_Sword_area_entered"]

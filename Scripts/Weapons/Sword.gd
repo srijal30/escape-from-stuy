@@ -1,25 +1,17 @@
 extends Area2D
 
-var swinging = false
-var damage = 50
+export var damage = 50
 
 #to swing the sword
 func attack():
 	$AnimationPlayer.play("swing")
 	
-#physics processing
-func _physics_process(delta):
-	#using interpolation
-	if swinging and rotation_degrees < 180:
-		rotation_degrees += 20
-	#reset to 0		
-	if rotation_degrees >= 180:
-		rotation_degrees = 0
-		swinging = false
+#second attack (maybe parry?)
+func second_attack():
+	print("there is no second attack!")
 	
-	#check all overlapping bodies if there is a dummy
-	#issue that it hits multiple times
-	for body in get_overlapping_areas(): 
-		if body.is_in_group("enemy") and $AnimationPlayer.is_playing():
-			body.get_parent().take_damage( damage )
-			
+
+#when area enters a body
+func _on_Sword_area_entered(area):
+	if area.is_in_group("enemy") and $AnimationPlayer.current_animation == "swing":
+		area.get_parent().take_damage(damage)
