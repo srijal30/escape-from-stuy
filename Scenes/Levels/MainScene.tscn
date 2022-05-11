@@ -34,7 +34,7 @@ item_name = "test_gun"
 [node name="Item4" parent="." instance=ExtResource( 3 )]
 position = Vector2( -201, 144 )
 scale = Vector2( 1.00613, 1 )
-item_name = "test_sword"
+item_name = "guitar"
 
 [node name="Dummy" parent="." instance=ExtResource( 4 )]
 position = Vector2( -337, -113 )

@@ -1,7 +1,7 @@
 extends Area2D
 
 var swinging = false
-
+var damage = 50
 
 #to swing the sword
 func attack():
@@ -19,6 +19,6 @@ func _physics_process(delta):
 	
 	#check all overlapping bodies if there is a dummy
 	for body in get_overlapping_bodies():
-		if body.is_in_group("dummy") and swinging:
-			body.take_damage()
+		if body.is_in_group("enemy") and swinging:
+			body.take_damage( damage )
 			

@@ -14,6 +14,9 @@ func attack():
 	bullet.global_position = $Gfx.global_position
 	bullet.set_rotation_degrees( rotation_degrees - 90 )	
 
+func second_attack():
+	print("there is no second attack!")
+
 #for process update
 func _process(delta):
 	rotation_degrees = rad2deg( get_global_mouse_position().angle_to_point( global_position ) ) + 90

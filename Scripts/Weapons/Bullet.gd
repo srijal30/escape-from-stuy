@@ -1,7 +1,9 @@
 extends Node2D
 
-var speed :int = 750
+var speed :int = 2000
 var despawnSpeed : float = 2.5 #in seconds
+
+var damage = 10
 
 #on the creation
 func _ready():
@@ -15,11 +17,10 @@ func _physics_process(delta):
 	#continously move the bullet
 	position += transform.x * speed * delta
 
-#when something collides with bullet
-func _on_Bullet_body_entered(body):
-	#if it is a dummy, make it take damage and delete it
-	if body.is_in_group("dummy"):
-		body.take_damage()
-		queue_free() 
-		
 
+
+func _on_Bullet_area_entered(area):
+	#if it is a dummy, make it take damage and delete it
+	if area.is_in_group("enemy"):
+		area.get_parent().take_damage(damage)
+		queue_free() 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hurt_dummy.png-795bee1cce5a5f84ebb310abb82221a3.stex"
+path="res://.import/sword.png-10fa239562828ebaf30ec85d808445ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/hurt_dummy.png"
-dest_files=[ "res://.import/hurt_dummy.png-795bee1cce5a5f84ebb310abb82221a3.stex" ]
+source_file="res://Textures/Items/sword.png"
+dest_files=[ "res://.import/sword.png-10fa239562828ebaf30ec85d808445ee.stex" ]
 
 [params]
 
