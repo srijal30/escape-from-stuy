@@ -8,5 +8,5 @@ rotation = 1.5708
 script = ExtResource( 1 )
 
 [node name="Gfx" type="Sprite" parent="."]
-position = Vector2( 0, -40 )
+position = Vector2( -3.62396e-05, -10 )
 texture = ExtResource( 2 )

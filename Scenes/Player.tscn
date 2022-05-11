@@ -36,3 +36,6 @@ script = ExtResource( 4 )
 modulate = Color( 0.247059, 0.027451, 0.227451, 1 )
 scale = Vector2( 7.51942, 7.67208 )
 shape = SubResource( 2 )
+
+[node name="Hand" type="Node2D" parent="PlayerManager"]
+position = Vector2( 17, -4 )

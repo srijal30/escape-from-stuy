@@ -30,7 +30,9 @@ func switch_weapon():
 		activeWeapon.queue_free()
 	#instantiate new weapon
 	activeWeapon = ItemManager.get_item( weapons[current] ).src.instance()
+	activeWeapon.transform = $Hand.transform
 	add_child(activeWeapon)
+	
 
 func _process(delta):
 	#switching weapon
