@@ -12,11 +12,13 @@ func take_damage( amount ):
 
 	#not fully implemented yet
 	health -= amount
-	if amount <= 0:
+	if health <= 0:
 		die()
 
 #not implemented yet
 func die():
-	print( name + " has died!" )	
+	print( name + " has died!" )
+	$AnimationPlayer.play("die")
+	yield( $AnimationPlayer, "animation_finished" )	
 	queue_free()
 	
