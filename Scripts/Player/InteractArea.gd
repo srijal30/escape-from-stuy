@@ -6,7 +6,7 @@ extends Area2D
 #in the future maybe for chests, doors, etc
 
 func add_weapon( weapon ):
-	get_parent().weapons.append( weapon )
+	PlayerInv.weapons.append( weapon )
 	
 func add_passive( passive ):
 	print("passives not implemented yet")
