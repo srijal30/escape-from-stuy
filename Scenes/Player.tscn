@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Player/Movement.gd" type="Script" id=1]
-[ext_resource path="res://Textures/roguelikeMC.png" type="Texture" id=2]
+[ext_resource path="res://Textures/roguelikeMC_run-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Player/InteractArea.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Player/PlayerManager.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Player/Camera.gd" type="Script" id=6]
@@ -11,11 +11,47 @@ height = 21.1801
 
 [sub_resource type="CircleShape2D" id=2]
 
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gfx:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "running"
+length = 0.425
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gfx:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4 ]
+}
+
 [node name="Playerh" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="Gfx" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+hframes = 5
+frame = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.993907, 3 )
@@ -39,3 +75,7 @@ shape = SubResource( 2 )
 
 [node name="Hand" type="Node2D" parent="PlayerManager"]
 position = Vector2( 17, -4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 3 )
+anims/running = SubResource( 4 )
