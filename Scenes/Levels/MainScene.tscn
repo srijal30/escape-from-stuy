@@ -29,21 +29,21 @@ tile_data = PoolIntArray( -458766, 1610612741, 0, -458765, 1610612741, 0, -45876
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Item" parent="." instance=ExtResource( 3 )]
-position = Vector2( 161, -129 )
+position = Vector2( 160, -109 )
 item_name = "test_sword"
 
 [node name="Item2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 163, -23 )
+position = Vector2( 162, -25 )
 scale = Vector2( 1.00613, 1 )
 item_name = "katana"
 
 [node name="Item3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 161, -76 )
+position = Vector2( 160, 67 )
 scale = Vector2( 1.00613, 1 )
 item_name = "test_gun"
 
 [node name="Item4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 164, 25 )
+position = Vector2( 162, 161 )
 scale = Vector2( 1.00613, 1 )
 item_name = "guitar"
 

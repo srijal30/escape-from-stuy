@@ -72,7 +72,7 @@ tracks/1/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( -0.2 )
 }
 
 [node name="Dummy" type="Node2D"]
@@ -104,3 +104,4 @@ anims/hurt = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+pitch_scale = 1.52

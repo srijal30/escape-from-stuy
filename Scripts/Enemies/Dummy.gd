@@ -9,7 +9,6 @@ var health = 100
 func take_damage( amount ):
 	#graphix	
 	$AnimationPlayer.play("hurt")
-
 	#not fully implemented yet
 	health -= amount
 	if health <= 0:
