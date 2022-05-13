@@ -32,11 +32,20 @@ func _physics_process(delta):
 	#when we pick up, we add the item string name
 	if Input.is_action_just_pressed("interact"):
 		var areas = get_overlapping_areas()
+		
 		if areas != []: #check if we are overlapping w/ areas
+			
+			#for item pickup
 			if areas[0].is_in_group("pickupable"): #check if we are overlapping w/ pickup
 				pickup( areas[0].get_parent() )
+			#for scene transitions
+			if areas[0].is_in_group("portal"):
+				areas[0].get_parent().change()
+			
+		#default no items to pickup message
 			else:
 				print("no items to pickup!")
 		else:
 			print("no items to pickup!")
 			
+		
