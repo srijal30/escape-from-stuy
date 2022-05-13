@@ -35,12 +35,19 @@ func _physics_process(delta):
 	#animation stuff
 	if velocity.x > 0:
 		$Gfx.flip_h = false
-		$AnimationPlayer.play("running")
 	elif velocity.x < 0:
-		$Gfx.flip_h = true
+		$Gfx.flip_h = true	
+#
+	if abs(velocity.x) > 0 or abs(velocity.y) > 0:
 		$AnimationPlayer.play("running")
 	else:
 		$AnimationPlayer.play("idle")
+
+#	#for moving up and down
+#	if abs( velocity.y ) > 0:
+#		$AnimationPlayer.play("running")	
+#		print( $AnimationPlayer.current_animation )
+		
 
 	#movement
 	move_and_slide(velocity)

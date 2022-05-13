@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Dummy.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Enemies/dummy.png" type="Texture" id=2]
 [ext_resource path="res://Textures/Enemies/hurt_dummy.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sounds/Damage.mp3" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -59,6 +60,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ]
 }
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="Dummy" type="Node2D"]
 script = ExtResource( 1 )
@@ -86,3 +101,6 @@ shape = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/die = SubResource( 4 )
 anims/hurt = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
