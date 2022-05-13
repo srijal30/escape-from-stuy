@@ -9,6 +9,7 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Map" type="Sprite" parent="."]
+visible = false
 position = Vector2( 202, -100 )
 scale = Vector2( 2.38673, 2.04401 )
 texture = ExtResource( 1 )

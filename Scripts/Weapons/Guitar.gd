@@ -2,20 +2,17 @@ extends Node2D
 
 export var swingDamage = 25
 
-
-func _ready():
-	pass # Replace with function body.
-
-
 #not strum
 func attack():
-	$AnimationPlayer.play("swing")
+	$AnimationPlayer.play("swing")	
 	
 	
 #strum (maybe cooldown)
 func second_attack():
 	
 	print("there is no second attack!")
+
+
 
 
 #when guitar body hits while swinging
