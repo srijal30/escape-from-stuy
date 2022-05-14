@@ -21,15 +21,15 @@ func remove_passive( passive ):
 	pass
 
 func switch_weapon():
-	if weapons == []:
+	if PlayerInv.weapons == []:
 		print("you have no weapons!")
 		return
-	current = (current + 1) % len(weapons) #go to the next one in the cycle
+	current = (current + 1) % len(PlayerInv.weapons) #go to the next one in the cycle
 	#get rid of old weapon
 	if activeWeapon != null:
 		activeWeapon.queue_free()
 	#instantiate new weapon
-	activeWeapon = ItemManager.get_item( weapons[current] ).src.instance()
+	activeWeapon = ItemManager.get_item( PlayerInv.weapons[current] ).src.instance()
 	activeWeapon.transform = $Hand.transform
 	add_child(activeWeapon)
 	

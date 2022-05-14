@@ -27,6 +27,7 @@ config/icon="res://Textures/Temp/icon.png"
 [autoload]
 
 ItemManager="*res://Scripts/Managers/ItemManager.gd"
+PlayerInv="*res://Scripts/playerInv.gd"
 
 [input]
 
