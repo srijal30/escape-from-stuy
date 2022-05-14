@@ -35,9 +35,11 @@ func _physics_process(delta):
 	#animation stuff
 	if velocity.x > 0:
 		$Gfx.flip_h = false
+		$PlayerManager/Hand.flip_right()
 	elif velocity.x < 0:
 		$Gfx.flip_h = true	
-#
+		$PlayerManager/Hand.flip_left()
+
 	if abs(velocity.x) > 0 or abs(velocity.y) > 0:
 		$AnimationPlayer.play("running")
 	else:

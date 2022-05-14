@@ -10,8 +10,8 @@ var weapons = [] #storage weapon name strings
 var activeWeapon = null #storage of activated weapon scene instance
 var current : int = 0
 
-#passive setup
 #NOT IMPLEMENTED YET
+#passive setup
 var passives = []
 
 func add_passive( passive ):
