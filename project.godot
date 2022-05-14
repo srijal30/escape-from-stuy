@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "ItemInfo",
 "language": "GDScript",
-"path": "res://Scripts/ItemInfo.gd"
+"path": "res://Scripts/Level/ItemInfo.gd"
 } ]
 _global_script_class_icons={
 "ItemInfo": ""
@@ -27,7 +27,7 @@ config/icon="res://Textures/Temp/icon.png"
 [autoload]
 
 ItemManager="*res://Scripts/Managers/ItemManager.gd"
-PlayerInv="*res://Scripts/playerInv.gd"
+PlayerInv="*res://Scripts/Level/PlayerInv.gd"
 
 [input]
 
