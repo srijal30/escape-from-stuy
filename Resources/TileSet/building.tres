@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=19 format=2]
+[gd_resource type="TileSet" load_steps=20 format=2]
 
 [ext_resource path="res://Textures/Tilesets/sprite_5.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Tilesets/sprite_7.png" type="Texture" id=2]
@@ -34,6 +34,8 @@ points = PoolVector2Array( 32, 13.9566, 0, 14.0912, 0, 0, 31.8622, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 31.6297, 14.1871, 0, 14.1871, 0, 0, 31.6297, 0 )
+
+[sub_resource type="GDScript" id=12]
 
 [resource]
 0/name = "sprite_0.png 0"
@@ -232,3 +234,4 @@ points = PoolVector2Array( 31.6297, 14.1871, 0, 14.1871, 0, 0, 31.6297, 0 )
 9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
+script = SubResource( 12 )
